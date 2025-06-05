@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pringle's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #0a0d21, #11152c);
+      color: #e0e7ff;
+      line-height: 1.7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .glow-star {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      animation: float 20s linear infinite;
+    }
+
+    .glow-star:nth-child(1) { top: 5%; left: 10%; animation-delay: 0s; }
+    .glow-star:nth-child(2) { top: 25%; left: 65%; animation-delay: 3s; }
+    .glow-star:nth-child(3) { top: 60%; left: 20%; animation-delay: 5s; }
+    .glow-star:nth-child(4) { top: 80%; left: 75%; animation-delay: 7s; }
+    .glow-star:nth-child(5) { top: 45%; left: 45%; animation-delay: 2s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      animation: fadeIn 2.5s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+      animation-fill-mode: forwards;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: popIn 1.8s ease-out forwards;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeSlideUp 1.8s ease forwards;
+    }
+
+    .section:nth-of-type(2) { animation-delay: 0.3s; }
+    .section:nth-of-type(3) { animation-delay: 0.6s; }
+    .section:nth-of-type(4) { animation-delay: 0.9s; }
+    .section:nth-of-type(5) { animation-delay: 1.2s; }
+    .section:nth-of-type(6) { animation-delay: 1.5s; }
+    .section:nth-of-type(7) { animation-delay: 1.8s; }
+
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      position: relative;
+      animation: slideInFromLeft 1.5s ease-out forwards;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #836fff, #4f8cff);
+      border-radius: 15px 15px 0 0;
+      opacity: 0.6;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    li:hover {
+      transform: translateX(5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="glow-star"></div>
+    <div class="glow-star"></div>
+    <div class="glow-star"></div>
+    <div class="glow-star"></div>
+    <div class="glow-star"></div>
+  </div>
+
+  <header>
+    <h1>Pringle’s Portfolio</h1>
+    <p>Roblox Project Manager & Discord Server Specialist</p>
+  </header>
+
+  <section class="section">
+    <h2>About Me</h2>
+    <p>Hi! I’m Pringles, a passionate Roblox Project Manager with experience managing teams, building communities, and creating memorable experiences on Roblox. I specialize in organizing, coordinating, and leading teams to execute successful Roblox projects, while also creating and managing vibrant, engaging Discord servers. My goal is to create streamlined project workflows and foster healthy, interactive spaces where users can connect, collaborate, and grow.</p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <ul>
+      <li>Project Management: Organizing, scheduling, and managing tasks and milestones.</li>
+      <li>Discord Server Management: Creating and maintaining custom Discord servers.</li>
+      <li>Team Collaboration: Working with developers, designers, moderators, and community managers.</li>
+      <li>Leadership: Leading teams, delegating tasks, and fostering a productive environment.</li>
+      <li>Communication: Keeping the team and community well-informed, clear, and engaged.</li>
+      <li>Roblox Studio: Familiarity with the Roblox platform, scripting basics, and studio features.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Portfolio Highlights</h2>
+    <div class="card">
+      <h3>Roblox Project – Tower Defense: Arisen</h3>
+      <p><strong>Role:</strong> Project Manager</p>
+      <ul>
+        <li>Managed a team of 60+ developers and designers</li>
+        <li>Implemented matchmaking, customization, and real-time leaderboard features</li>
+        <li>Led weekly meetings and tracked milestones via Trello & Asana</li>
+        <li>Game gained 100+ players, increased revenue by 30%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Discord Server Management – Tower Defense: Arisen</h3>
+      <ul>
+        <li>Designed server layout with channels, bots, permissions, and role systems</li>
+        <li>Integrated in-game rewards & announcement tools</li>
+        <li>Increased server by 30% in 2 months</li>
+        <li>Hosted 15+ events and created engagement bots</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Leadership & Team Collaboration</h3>
+      <ul>
+        <li>Led and mentored 15+ team members including mods and devs</li>
+        <li>Resolved community disputes effectively</li>
+        <li>Trained new admins and optimized team workflow</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Tools & Technologies</h2>
+    <ul>
+      <li>Roblox Studio & Lua (for game development and scripting)</li>
+      <li>Trello, Asana, ClickUp (for project management)</li>
+      <li>Discord Bot Development (Discord.js, Python)</li>
+      <li>Google Drive & Notion (docs, planning)</li>
+      <li>Adobe Photoshop & Canva (banners, branding)</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Testimonials</h2>
+    <div class="card">
+      <p>“Working with Pringles on our Roblox game project was a game-changer. They kept everything on track and helped our team focus on delivering the best possible experience for players. Our community has grown significantly under their management.”<br><strong>– Final_Void, Owner</strong></p>
+    </div>
+    <div class="card">
+      <p>“I’ve been part of multiple Discord servers, but Pringle’s approach to building a strong, engaged community is unparalleled. They really understand how to keep things fun and safe for everyone.”<br><strong>– Inferno, Member</strong></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact Me</h2>
+    <ul>
+      <li><strong>Discord:</strong> Pringles</li>
+      <li><strong>Email:</strong> Cartooduck101@gmail.com</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Pringle. All rights reserved.
+  </footer>
+</body>
+</html>
